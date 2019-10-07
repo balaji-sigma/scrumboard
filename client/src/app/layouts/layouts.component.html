@@ -1,0 +1,40 @@
+<div class="wrapper">
+    <mat-sidenav-container>
+
+        <mat-sidenav class="bg-secondary text-white" style=" border: none" mode="side" [(opened)]="opened">
+            <mat-nav-list style="padding: 0px; color:white">
+                <div style="background-color: #33b5e5; padding:7.5px">
+                    <h3 matLine>Scrumboard</h3>
+                </div>
+                <span *ngFor="let link of menu">
+                    <span *ngIf="link.children && link.children.length > 0">
+                        <mat-accordion>
+                            <mat-expansion-panel (opened)="apanel = true" (closed)="apanel=false">
+                                <mat-expansion-panel-header class="text-white bg-secondary" style="border-radius: 0px">
+
+                                    <mat-icon matListIcon>{{link.iconName}}</mat-icon>{{ link.displayName }}
+                                </mat-expansion-panel-header>
+                                <a class="text-white bg-dark" mat-list-item *ngFor=" let child of link.children"
+                                    (click)="drawer.toggle()"
+                                    [routerLink]="['/' + child.route, {id: link.children.length}]">
+                                    <mat-icon matListIcon>{{child.iconName}}</mat-icon>{{ child.displayName }}
+                                </a>
+                            </mat-expansion-panel>
+                        </mat-accordion>
+                    </span>
+                    <span *ngIf="!link.children || link.children.length === 0">
+                        <a mat-list-item [routerLink]="['/' + link.route]" class="text-white">
+                            <mat-icon matListIcon>{{link.iconName}}</mat-icon>{{ link.displayName }}
+                        </a>
+                    </span>
+                </span>
+
+            </mat-nav-list>
+        </mat-sidenav>
+        <mat-sidenav-content>
+
+
+            <app-nav-bar-dash (toggleOpen)='changedis($event)' [opened]="opened"></app-nav-bar-dash>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>
