@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "noti": "You have a message",
+        "view": false
+    },
+    {
+        "id": 2,
+        "noti": "You have a message",
+        "view": false
+    },
+    {
+        "id": 3,
+        "noti": "You have a message",
+        "view": true
+    },
+    {
+        "id": 4,
+        "noti": "You have a message",
+        "view": false
+    },
+    {
+        "id": 5,
+        "noti": "You have a message",
+        "view": false
+    }
+]

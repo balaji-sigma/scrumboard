@@ -1,9 +1,10 @@
 <div class="wrapper">
     <mat-sidenav-container>
 
-        <mat-sidenav class="bg-secondary text-white" style=" border: none" mode="side" [(opened)]="opened">
+        <mat-sidenav class="text-white" style=" border: none; background-color: #37474F" mode="side"
+            [(opened)]="opened">
             <mat-nav-list style="padding: 0px; color:white">
-                <div style="background-color: #33b5e5; padding:7.5px">
+                <div style="padding:7.5px" class="">
                     <h3 matLine>Scrumboard</h3>
                 </div>
                 <span *ngFor="let link of menu">
@@ -31,7 +32,7 @@
 
             </mat-nav-list>
         </mat-sidenav>
-        <mat-sidenav-content>
+        <mat-sidenav-content style="background-color: #eeeeee">
 
 
             <app-nav-bar-dash (toggleOpen)='changedis($event)' [opened]="opened"></app-nav-bar-dash>

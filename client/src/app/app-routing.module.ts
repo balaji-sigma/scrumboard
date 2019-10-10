@@ -17,4 +17,4 @@ const routes: Routes = [
 export class AppRoutingModule { }
 
 export const RoutingComponents = [LoginFormComponent,
-  LayoutsComponent];
+  LayoutsComponent, DashboardComponent];

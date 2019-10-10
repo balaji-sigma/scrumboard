@@ -1,5 +1,6 @@
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { DashnotiService } from '../dashnoti.service';
 
 @Component({
   selector: 'app-nav-bar-dash',
@@ -8,11 +9,20 @@ import { Router } from '@angular/router';
 })
 export class NavBarDashComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private _dashnotiService: DashnotiService) { }
+  public notifications = [];
+  public count: number = 0;
 
   ngOnInit() {
-  }
+    this._dashnotiService.getNotification().subscribe(data => {
+      this.notifications = data
+      this.notifications.forEach((notify) => {
+        if (!notify.view) this.count++;
+      });
+    });
 
+
+  }
 
   @Input() opened: boolean;
   @Output() toggleOpen = new EventEmitter();

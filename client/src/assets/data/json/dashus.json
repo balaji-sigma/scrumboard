@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "userid": 1,
+        "story": "Sample Story"
+    },
+    {
+        "id": 2,
+        "userid": 2,
+        "story": "Sample Story"
+    },
+    {
+        "id": 3,
+        "userid": 3,
+        "story": "Sample Story"
+    },
+    {
+        "id": 4,
+        "userid": 4,
+        "story": "Sample Story"
+    },
+    {
+        "id": 5,
+        "userid": 5,
+        "story": "Sample Story"
+    }
+]

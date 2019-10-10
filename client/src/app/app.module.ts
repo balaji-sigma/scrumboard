@@ -14,6 +14,10 @@ import { NavBarDashComponent } from './nav-bar-dash/nav-bar-dash.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { HttpClientModule } from '@angular/common/http';
+import { DashnotiService } from './dashnoti.service';
+import { DashusService } from './dashus.service';
+import { DashblService } from './dashbl.service';
+import { DashmsService } from './dashms.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,13 @@ import { HttpClientModule } from '@angular/common/http';
     MaterialModule,
     HttpClientModule
   ],
-  providers: [EmploginService],
+  providers: [
+    EmploginService,
+    DashnotiService,
+    DashusService,
+    DashblService,
+    DashmsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

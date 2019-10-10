@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "userid": 1,
+        "milestone": "Sample Milestone"
+    },
+    {
+        "id": 2,
+        "userid": 2,
+        "milestone": "Sample Milestone"
+    },
+    {
+        "id": 3,
+        "userid": 3,
+        "milestone": "Sample Milestone"
+    },
+    {
+        "id": 4,
+        "userid": 4,
+        "milestone": "Sample Milestone"
+    },
+    {
+        "id": 5,
+        "userid": 5,
+        "milestone": "Sample Milestone"
+    }
+]

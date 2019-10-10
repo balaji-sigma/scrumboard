@@ -1,14 +1,5 @@
-import { Component } from '@angular/core';
-
-
-export interface NavItem {
-  displayName: string;
-  disabled?: boolean;
-  iconName: string;
-  route?: string;
-  children?: NavItem[];
-}
-
+import { Component, OnInit } from '@angular/core';
+import { EmploginService } from '../emplogin.service';
 
 
 @Component({
@@ -18,52 +9,19 @@ export interface NavItem {
 })
 
 
-export class LayoutsComponent {
+export class LayoutsComponent implements OnInit {
 
   public opened: boolean = true;
 
-  menu: NavItem[] = [
-    {
-      displayName: 'Dashboard',
-      iconName: 'apps',
-      route: "dashboard",
-    },
-    {
-      displayName: 'Entradas GADE',
-      iconName: 'ballot',
-      route: 'entradasGADE',
-    },
-    {
-      displayName: 'Expedientes',
-      iconName: 'description',
-      children: [
-        {
-          displayName: 'Mis Expedientes',
-          iconName: 'how_to_reg',
-          route: '/misexpedientes'
-        },
-        {
-          displayName: 'Todos',
-          iconName: 'waves',
-          route: '/todos'
-        }
-      ]
-    },
-    {
-      displayName: 'Perfiles',
-      iconName: 'group',
-      children: [
-        {
-          displayName: 'Búsqueda Perfil',
-          iconName: 'search',
-          route: '/busquedaperfiles'
-        }
-      ]
-    }
-  ];
+  public menu = [];
 
   apanel: boolean = false;
-  constructor() { }
+
+  constructor(private _sidemenuservice: EmploginService) { }
+
+  ngOnInit() {
+    this._sidemenuservice.getsidemenu().subscribe(data => this.menu = data)
+  }
 
   changedis(opened) {
     this.opened = opened;
