@@ -1,53 +1,53 @@
-<div class="row">
-    <div class="col-sm">
+<div class="container-fluid">
+    <div class="row mt-5">
 
-    </div>
-    <div class="col-sm">
+        <div class="col-sm">
 
-        <form class="text-center border border-dark p-5">
-            <p class="h4 mb-4">Sign in</p>
+        </div>
+        <div class="col-sm text-white" style="background-color: #263238">
 
-            <input [(ngModel)]="username" type="text" id="username" name="username" class="form-control mb-4"
-                placeholder="User Name" />
+            <form class="text-center border border-dark p-5" #loginform="ngForm" novalidate (ngSubmit)="onSubmit()">
+                <p class="h4 mb-4">Sign in</p>
+                <mat-form-field class="w-100 text-white">
+                    <input pattern="(rittika)|(urmila)|(pradeep)|(admin)" matInput type="text" required #name="ngModel"
+                        [(ngModel)]="username" id="username" name="username" class="form-control text-white">
+                    <mat-placeholder class="placeholder text-white">Username</mat-placeholder>
+                    <mat-error *ngIf="name.invalid">
+                        Please enter a valid User Name
+                    </mat-error>
+                </mat-form-field>
 
+                <mat-form-field class="w-100">
+                    <input required matInput [(ngModel)]="password" type="password" id="password" name="password"
+                        class="form-control">
+                    <mat-placeholder class="placeholder text-white">Password</mat-placeholder>
 
-            <input type="password" id="password" class="form-control mb-4" placeholder="Password" />
+                </mat-form-field>
 
-            <div class="d-flex justify-content-around">
-
+                <button [disabled]="loginform.form.invalid" class="btn btn-info btn-block mt-4" type="submit">
+                    Sign in
+                </button>
+                <br />
                 <div class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember" />
                     <label class="custom-control-label" for="defaultLoginFormRemember">
-                        {{username}} Remember me
+                        Remember me
                     </label>
                 </div>
-
-                <br />
                 <div class="pl-3">
                     <a href="#">Forgot Password?</a>
                 </div>
-            </div>
 
-            <button routerLink="/dashboard" class="btn btn-info btn-block my-4" type="submit">
-                Sign in
-            </button>
-            <div class="d-flex justify-content-around">
-                <p>
-                    Not a member?
-                </p>
-                <a href="#">Register</a>
+            </form>
+        </div>
+        <div class="col-sm">
 
-            </div>
-        </form>
-
+        </div>
     </div>
-    <div class="col-sm">
 
-    </div>
-</div>
+    <div class="row">
+        <div class="col-xl">
 
-<div class="row">
-    <div class="col-xl">
-
+        </div>
     </div>
 </div>

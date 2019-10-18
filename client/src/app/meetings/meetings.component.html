@@ -1,0 +1,67 @@
+<div class="container-fluid bg-white shadow border border-primary">
+
+    <div class="row bg-white py-2 px-4 mb-3">
+        <div class="col-md-12 box colstyle text-white">
+            <mat-menu class="navbar-nav ml-auto" #schmeet="matMenu">
+                <button mat-menu-item (click)="daistanmeet()">
+                    <mat-icon>account_circle</mat-icon>
+                    <span>Daily Standup</span>
+                </button>
+                <button mat-menu-item>
+                    <mat-icon>settings_applications</mat-icon>
+                    <span>Sprint Planning</span>
+                </button>
+                <button mat-menu-item (click)="navigateMenu('logout')">
+                    <mat-icon>power_settings_new</mat-icon>
+                    <span> Sprint Retrospective</span>
+                </button>
+            </mat-menu>
+        </div>
+
+        <button mat-button-raised class="text-white text-dark shadow " style="background-color: #3E4551 "
+            [matMenuTriggerFor]="schmeet">
+
+            <span class="text-white">Add Meeting{{newstmeet | json}}</span>
+        </button>
+    </div>
+
+    <div class="row h5 mb-3">
+        <div class="col-md-12 bg-primary colstyle text-white">
+            Meetings Activity
+        </div>
+    </div>
+
+    <div class="row bg-secondary text-white shadow">
+        <div class="col-md-1 colstyle font-weight-bold"></div>
+        <div class="col-md-2 colstyle font-weight-bold">Title</div>
+        <div class="col-md-1 colstyle font-weight-bold">By</div>
+        <div class="col-md-3 colstyle font-weight-bold">To</div>
+        <div class="col-md-2 colstyle font-weight-bold">Status</div>
+        <div class="col-md-2 colstyle font-weight-bold">Date</div>
+        <div class="col-md-1 colstyle font-weight-bold"></div>
+    </div>
+    <div class="row bg-secondary">
+        <div class="col-md-12 colstyle font-weight-bold">
+            <mat-accordion>
+                <mat-expansion-panel *ngFor="let meeting of meetings" class="shadow bg-white">
+                    <mat-expansion-panel-header class="text-dark bg-white shadow border border-secondary"
+                        style="border-radius: 0px">
+
+
+                        <div class="col-md-3 colstyle font-weight-bold">{{ meeting.title }}</div>
+                        <div class="col-md-1 colstyle font-weight-bold">By</div>
+                        <div class="col-md-3 colstyle font-weight-bold">To</div>
+                        <div class="col-md-2 colstyle font-weight-bold">Status</div>
+                        <div class="col-md-3 colstyle font-weight-bold">Date</div>
+
+                    </mat-expansion-panel-header>
+
+                    <a class="text-dark" mat-list-item>
+
+                        {{ meeting.title }}
+                    </a>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </div>
+</div>

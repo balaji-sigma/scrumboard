@@ -1,88 +1,86 @@
-<div class="wrapper maincont">
-    <div class="container-fluid bg-white shadow border border-primary">
-        <div class="row bg-primary text-white h4">
-            <div class="col-md-12 box shadow colstyle">Project</div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 colstyle font-weight-bold">Title</div>
-            <div class="col-md-3 colstyle font-weight-bold">Members</div>
-            <div class="col-md-3 colstyle font-weight-bold">Status</div>
-            <div class="col-md-3 colstyle font-weight-bold">Start Date</div>
-        </div>
-        <div class="row text-secondary">
-            <div class="col-md-3 colstyle">Desitokrey Testing</div>
-            <div class="col-md-3 colstyle">
-
-                <img mat-card-avatar class="example-header-image">
-                <img mat-card-avatar class="example-header-image">
-                <img mat-card-avatar class="example-header-image">
-            </div>
-            <div class="col-md-3 colstyle text-success">
-                <span class="dot bg-success"></span>Active</div>
-            <div class="col-md-3 colstyle">01 Jan 2019</div>
-        </div>
-        <div class="row text-white h4">
-            <div class="col-md-12">
-                Line
-            </div>
-        </div>
-
-
-        <div class="row">
-            <div class="col-md-12 h4 text-white bg-primary colstyle shadow">
-                Recent Activity
-            </div>
-        </div>
-
-        <div class="row" style="background-color: #eeeeee">
-            <div class="col-md-4 colstyle">
-                <div class="card mb-3">
-                    <div class="card-header bg-warning text-white font-weight-bold">User Stories</div>
-                    <div class="card-body">
-                        <mat-list>
-                            <mat-list-item class="shadow"
-                                *ngFor="let story of (stories ? stories.slice(0,5): []); let i = index">
-                                <mat-icon mat-list-icon>person</mat-icon>
-                                <h4 mat-line>{{story.userid}}</h4>
-                                <p mat-line> {{story.story}} </p>
-                            </mat-list-item>
-
-                        </mat-list>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 colstyle">
-
-                <div class="card mb-3">
-                    <div class="card-header bg-danger text-white font-weight-bold">Backlogs</div>
-                    <div class="card-body">
-                        <mat-list>
-                            <mat-list-item class="shadow" *ngFor="let backlog of backlogs">
-                                <mat-icon mat-list-icon>restore</mat-icon>
-                                <h4 mat-line>{{backlog.id}}</h4>
-                                <p mat-line> {{backlog.backlog}} </p>
-                            </mat-list-item>
-
-                        </mat-list>
-                    </div>
-                </div>
-
-            </div>
-            <div class="col-md-4 colstyle">
-                <div class="card mb-3">
-                    <div class="card-header bg-info text-white font-weight-bold">Milestones</div>
-                    <div class="card-body">
-                        <mat-list>
-                            <mat-list-item class="shadow" *ngFor="let milestone of milestones">
-                                <mat-icon mat-list-icon>check_circle</mat-icon>
-                                <h4 mat-line>{{milestone.id}}</h4>
-                                <p mat-line> {{milestone.milestone}} </p>
-                            </mat-list-item>
-                        </mat-list>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+<div class="container-fluid bg-white shadow border border-primary">
+    <div class="row bg-primary text-white h4">
+        <div class="col-md-12 box shadow colstyle">Project</div>
     </div>
+    <div class="row">
+        <div class="col-md-3 colstyle font-weight-bold">Title</div>
+        <div class="col-md-3 colstyle font-weight-bold">Members</div>
+        <div class="col-md-3 colstyle font-weight-bold">Status</div>
+        <div class="col-md-3 colstyle font-weight-bold">Start Date</div>
+    </div>
+    <div class="row text-secondary">
+        <div class="col-md-3 colstyle">Desitokrey Testing</div>
+        <div class="col-md-3 colstyle">
+
+            <img mat-card-avatar class="example-header-image">
+            <img mat-card-avatar class="example-header-image">
+            <img mat-card-avatar class="example-header-image">
+        </div>
+        <div class="col-md-3 colstyle text-success">
+            <span class="dot bg-success"></span>Active</div>
+        <div class="col-md-3 colstyle">01 Jan 2019</div>
+    </div>
+    <div class="row text-white h4">
+        <div class="col-md-12">
+            Line
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12 h4 text-white bg-primary colstyle shadow">
+            Recent Activity
+        </div>
+    </div>
+
+    <div class="row" style="background-color: #eeeeee">
+        <div class="col-md-4 colstyle">
+            <div class="card mb-3">
+                <div class="card-header bg-warning text-white font-weight-bold">User Stories</div>
+                <div class="card-body">
+                    <mat-list>
+                        <mat-list-item class="shadow"
+                            *ngFor="let story of (stories ? stories.slice(0,5): []); let i = index">
+                            <mat-icon mat-list-icon>person</mat-icon>
+                            <h4 mat-line>{{story.userid}}</h4>
+                            <p mat-line> {{story.story}} </p>
+                        </mat-list-item>
+
+                    </mat-list>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 colstyle">
+
+            <div class="card mb-3">
+                <div class="card-header bg-danger text-white font-weight-bold">Backlogs</div>
+                <div class="card-body">
+                    <mat-list>
+                        <mat-list-item class="shadow" *ngFor="let backlog of backlogs">
+                            <mat-icon mat-list-icon>restore</mat-icon>
+                            <h4 mat-line>{{backlog.id}}</h4>
+                            <p mat-line> {{backlog.backlog}} </p>
+                        </mat-list-item>
+
+                    </mat-list>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4 colstyle">
+            <div class="card mb-3">
+                <div class="card-header bg-info text-white font-weight-bold">Milestones</div>
+                <div class="card-body">
+                    <mat-list>
+                        <mat-list-item class="shadow" *ngFor="let milestone of milestones">
+                            <mat-icon mat-list-icon>check_circle</mat-icon>
+                            <h4 mat-line>{{milestone.id}}</h4>
+                            <p mat-line> {{milestone.milestone}} </p>
+                        </mat-list-item>
+                    </mat-list>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>

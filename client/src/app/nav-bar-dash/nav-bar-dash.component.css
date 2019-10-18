@@ -8,3 +8,7 @@
 button:focus {
     outline: none !important;
 }
+
+.maincont {
+    padding:10px;
+}

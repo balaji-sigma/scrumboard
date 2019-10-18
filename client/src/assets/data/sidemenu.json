@@ -2,37 +2,68 @@
     {
         "displayName": "Dashboard",
         "iconName": "apps",
-        "route": "dashboard"
+        "route": "dashboard",
+        "check": false
     },
     {
-        "displayName": "Entradas GADE",
+        "displayName": "Projects",
         "iconName": "ballot",
-        "route": "entradasGADE"
+        "route": "projects",
+        "check": false
     },
     {
-        "displayName": "Expedientes",
+        "displayName": "Cards Wall",
+        "iconName": "ballot",
+        "route": "scrumboard",
+        "check": false
+    },
+    {
+        "displayName": "Scrum",
         "iconName": "description",
+        "check": false,
         "children": [
             {
-                "displayName": "Mis Expedientes",
+                "displayName": "Meetings",
                 "iconName": "how_to_reg",
-                "route": "/misexpedientes"
+                "route": "meetings",
+                "check": false
             },
             {
-                "displayName": "Todos",
+                "displayName": "User Stories",
+                "iconName": "how_to_reg",
+                "route": "userstories",
+                "check": false
+            },
+            {
+                "displayName": "Tasks",
                 "iconName": "waves",
-                "route": "/todos"
+                "route": "tasks",
+                "check": false
+            },
+            {
+                "displayName": "Activity Stream",
+                "iconName": "how_to_reg",
+                "route": "actstream",
+                "check": false
             }
         ]
     },
     {
-        "displayName": "Perfiles",
+        "displayName": "Admin Settings",
         "iconName": "group",
+        "check": true,
         "children": [
             {
-                "displayName": "Búsqueda Perfil",
+                "displayName": "Add Project",
                 "iconName": "search",
-                "route": "/busquedaperfiles"
+                "route": "addproject",
+                "check": true
+            },
+            {
+                "displayName": "Add User",
+                "iconName": "search",
+                "route": "adduser",
+                "check": true
             }
         ]
     }

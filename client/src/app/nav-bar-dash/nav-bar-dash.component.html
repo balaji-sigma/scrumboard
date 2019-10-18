@@ -44,11 +44,13 @@
 
             <button class="text-white" mat-icon-button [matMenuTriggerFor]="promenu">
                 <mat-icon>account_box</mat-icon>
-                User
+                <span>{{global.name}}</span>
             </button>
         </div>
 
     </nav>
 </div>
+<div class="wrapper maincont">
 
-<app-dashboard></app-dashboard>
+    <router-outlet></router-outlet>
+</div>

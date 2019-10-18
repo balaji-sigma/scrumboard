@@ -3,6 +3,7 @@ export interface NavItem {
     disabled?: boolean;
     iconName: string;
     route?: string;
+    check?: boolean;
     children?: NavItem[];
 }
 

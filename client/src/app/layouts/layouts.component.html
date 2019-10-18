@@ -8,23 +8,24 @@
                     <h3 matLine>Scrumboard</h3>
                 </div>
                 <span *ngFor="let link of menu">
-                    <span *ngIf="link.children && link.children.length > 0">
+                    <span *ngIf="(link.children && link.children.length > 0) && (link.check ? authmenu : true)">
+
                         <mat-accordion>
-                            <mat-expansion-panel (opened)="apanel = true" (closed)="apanel=false">
+                            <mat-expansion-panel expanded disabled hideToggle (opened)="apanel = true"
+                                (closed)="apanel=false">
                                 <mat-expansion-panel-header class="text-white bg-secondary" style="border-radius: 0px">
 
                                     <mat-icon matListIcon>{{link.iconName}}</mat-icon>{{ link.displayName }}
                                 </mat-expansion-panel-header>
                                 <a class="text-white bg-dark" mat-list-item *ngFor=" let child of link.children"
-                                    (click)="drawer.toggle()"
-                                    [routerLink]="['/' + child.route, {id: link.children.length}]">
+                                    [routerLink]="[child.route, {id: link.children.length}]">
                                     <mat-icon matListIcon>{{child.iconName}}</mat-icon>{{ child.displayName }}
                                 </a>
                             </mat-expansion-panel>
                         </mat-accordion>
                     </span>
                     <span *ngIf="!link.children || link.children.length === 0">
-                        <a mat-list-item [routerLink]="['/' + link.route]" class="text-white">
+                        <a mat-list-item [routerLink]="[link.route]" class="text-white">
                             <mat-icon matListIcon>{{link.iconName}}</mat-icon>{{ link.displayName }}
                         </a>
                     </span>
@@ -33,8 +34,6 @@
             </mat-nav-list>
         </mat-sidenav>
         <mat-sidenav-content style="background-color: #eeeeee">
-
-
             <app-nav-bar-dash (toggleOpen)='changedis($event)' [opened]="opened"></app-nav-bar-dash>
         </mat-sidenav-content>
     </mat-sidenav-container>

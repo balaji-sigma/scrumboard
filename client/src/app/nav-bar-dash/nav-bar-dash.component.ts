@@ -1,6 +1,7 @@
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { DashnotiService } from '../dashnoti.service';
+import { Globals } from '../../assets/data/globals'
 
 @Component({
   selector: 'app-nav-bar-dash',
@@ -9,7 +10,10 @@ import { DashnotiService } from '../dashnoti.service';
 })
 export class NavBarDashComponent implements OnInit {
 
-  constructor(private router: Router, private _dashnotiService: DashnotiService) { }
+  constructor(private router: Router,
+    private _dashnotiService: DashnotiService,
+    public global: Globals) { }
+
   public notifications = [];
   public count: number = 0;
 

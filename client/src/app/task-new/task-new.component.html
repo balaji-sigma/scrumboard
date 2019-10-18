@@ -1,0 +1,113 @@
+<div class="container bg-white">
+    <form #newtaskform="ngForm" novalidate>
+        <div class="row bg-primary text-white">
+            <div class="col-md-12">
+                Add New task {{newtaskform.value | json}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 form-group">
+
+                <label>Title</label>
+                <input class="w-100" type="text" name="title" [(ngModel)]="newtask.title" required></div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-12 form-group">
+                <label>Description</label>
+                <textarea class="w-100" type="text" name="desc" [(ngModel)]="newtask.desc" required>
+                    </textarea>
+            </div>
+
+        </div>
+
+        <div class="row mb-3 border border-secondary">
+            <label class="w-100">Assignee</label>
+            <div class="col-md-3 form-check">
+                <input class="form-check-input" [(ngModel)]="newtask.torad" type="radio" name="assignee" id="assignee1"
+                    value="3">
+                <label class="form-check-label" for="assignee1">
+                    Rittika
+                </label>
+            </div>
+            <div class="col-md-3 form-check">
+                <input class="form-check-input" [(ngModel)]="newtask.torad" type="radio" name="assignee" id="assignee2"
+                    value="4">
+                <label class="form-check-label" for="assignee2">
+                    Urmila
+                </label>
+            </div>
+        </div>
+
+        <div class="row mb-3 border border-secondary">
+            <label class="w-100">Coloumn</label>
+            <div class="col-md-3 form-check">
+                <input class="form-check-input" [(ngModel)]="newtask.colrad" type="radio" name="coloumn" id="coloumn1"
+                    value="backlog">
+                <label class="form-check-label" for="coloumn1">
+                    Backlog
+                </label>
+            </div>
+            <div class="col-md-2 form-check">
+                <input class="form-check-input" [(ngModel)]="newtask.colrad" type="radio" name="coloumn" id="coloumn2"
+                    value="ready">
+                <label class="form-check-label" for="coloumn2">
+                    Ready
+                </label>
+            </div>
+            <div class="col-md-4 form-check">
+                <input class="form-check-input" [(ngModel)]="newtask.colrad" type="radio" name="coloumn" id="coloumn3"
+                    value="Work in Progress">
+                <label class="form-check-label" for="coloumn3">
+                    Work In Progress
+                </label>
+            </div>
+            <div class="col-md-3 form-check">
+                <input class="form-check-input" [(ngModel)]="newtask.colrad" type="radio" name="coloumn" id="coloumn4"
+                    value="Done">
+                <label class="form-check-label" for="coloumn4">
+                    Done {{newtask.cdate}}
+                </label>
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-md-4">
+                <mat-form-field>
+                    <input name="cdate" required matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker1"
+                        placeholder="Create date" (dateChange)="addEvent('cd', $event)" disabled>
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1 disabled="false"></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field>
+                    <input name="sdate" required matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker2"
+                        placeholder="Start date" (dateChange)="addEvent('sd', $event)" disabled>
+                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker #picker2 disabled="false"></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field>
+                    <input name="edate" required matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker3"
+                        placeholder="End date" (dateChange)="addEvent('ed', $event)" disabled>
+                    <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                    <mat-datepicker #picker3 disabled="false"></mat-datepicker>
+                </mat-form-field>
+            </div>
+
+        </div>
+
+        <div class="row form-group">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <button mat-button-raised [mat-dialog-close]="newtask" cdkFocusInitial
+                    class="bg-primary text-white py-2 px-4" (click)="onformsubmit()"
+                    disabled="newtaskform.form.valid">Create</button>
+            </div>
+            <div class="col-md-4"></div>
+
+        </div>
+    </form>
+</div>

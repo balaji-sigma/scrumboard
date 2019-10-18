@@ -1,0 +1,13 @@
+(7,1571148942,'task.create',1,1,5,'{\"task_id\":5,\"task\":
+{\"id\":\"5\",\"title\":\"Tchange\",\"description\":\"Dchange\",\"date_creation\":\"1571148942\",
+\"date_completed\":null,\"date_due\":\"1569888000\",\"color_id\":\"blue\",\"project_id\":\"1\",
+\"column_id\":\"2\",\"owner_id\":\"1\",\"position\":\"2\",\"score\":\"4\",\"is_active\":\"1\",
+\"category_id\":\"0\",\"creator_id\":\"1\",\"date_modification\":\"1571148942\",\"reference\":
+\"Rchange\",\"date_started\":\"1559347200\",\"time_spent\":\"1\",\"time_estimated\":\"10\",
+\"swimlane_id\":\"1\",\"date_moved\":\"1571148942\",\"recurrence_status\":\"0\",\"recurrence_trigger\":
+\"0\",\"recurrence_factor\":\"0\",\"recurrence_timeframe\":\"0\",\"recurrence_basedate\":\"0\",
+\"recurrence_parent\":null,\"recurrence_child\":null,\"priority\":\"1\",\"external_provider\":null,
+\"external_uri\":null,\"category_name\":null,\"swimlane_name\":\"Default swimlane\",\"project_name\":
+\"test\",\"column_title\":\"Ready\",\"assignee_username\":\"admin\",\"assignee_name\":null,
+\"creator_username\":\"admin\",\"creator_name\":null,\"category_description\":null,\"column_position\":
+\"2\"}}'

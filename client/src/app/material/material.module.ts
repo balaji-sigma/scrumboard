@@ -8,6 +8,12 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatBadgeModule } from '@angular/material/badge';
+import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material';
 
 const materialModule = [
   MatButtonModule,
@@ -18,7 +24,13 @@ const materialModule = [
   MatMenuModule,
   MatGridListModule,
   MatCardModule,
-  MatBadgeModule
+  MatBadgeModule,
+  MatInputModule,
+  MatSnackBarModule,
+  MatDialogModule,
+  MatCheckboxModule,
+  MatDatepickerModule,
+  MatNativeDateModule
 ];
 
 @NgModule({
