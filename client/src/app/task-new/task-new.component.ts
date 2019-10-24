@@ -1,12 +1,13 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { KnewtaskService } from '../knewtask.service';
 
 export interface NewTask {
   title: string;
   desc?: string;
   torad?: number;
-  colrad?: string;
+  colrad?: number;
   cdate?: number;
   sdate?: number;
   edate?: number;
@@ -20,7 +21,7 @@ export interface NewTask {
 export class TaskNewComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<TaskNewComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) { }
+    @Inject(MAT_DIALOG_DATA) public data: any, public ktser: KnewtaskService) { }
 
   public newtask = <NewTask>{ title: '' }
 
@@ -38,14 +39,20 @@ export class TaskNewComponent implements OnInit {
     let date = new Date(event.value);
     date.setHours(16, 12, 48)
 
-    if (type == 'cd') this.newtask.cdate = date.getTime();
-    if (type == 'sd') this.newtask.sdate = date.getTime();
-    if (type == 'ed') this.newtask.edate = date.getTime();
+    if (type == 'cd') this.newtask.cdate = date.getTime() / 1000;
+    if (type == 'sd') this.newtask.sdate = date.getTime() / 1000;
+    if (type == 'ed') this.newtask.edate = date.getTime() / 1000;
+
+
 
   }
 
   onformsubmit() {
-
+    this.ktser.ontasksubmit(this.newtask).subscribe(
+      data => console.log('success', data),
+      error => console.log('oops', error)
+    );
+    console.log('insub');
   }
 
 

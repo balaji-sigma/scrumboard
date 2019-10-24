@@ -24,6 +24,7 @@ import { MeetingsService } from './meetings.service';
 import { DaistandmeetdialogComponent } from './daistandmeetdialog/daistandmeetdialog.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { TaskNewComponent } from './task-new/task-new.component';
+import { KnewtaskService } from './knewtask.service';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { TaskNewComponent } from './task-new/task-new.component';
     DashusService,
     DashblService,
     DashmsService,
-    MeetingsService
+    MeetingsService,
+    KnewtaskService
   ],
   bootstrap: [AppComponent]
 })
