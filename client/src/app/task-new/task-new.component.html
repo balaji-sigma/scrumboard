@@ -26,7 +26,7 @@
         </div>
 
         <div class="row mb-3 border border-secondary">
-            <label class="w-100">Assignee<span *ngIf="asgn.invalid">Select one</span></label>
+            <label class="w-100">Assignee</label>
             <div class="col-md-3 form-check">
                 <input class="form-check-input" #asgn="ngModel" [(ngModel)]="newtask.torad" type="radio" name="assignee"
                     id="assignee1" value='4' required>
@@ -106,7 +106,7 @@
         <div class="row form-group">
             <div class="col-md-4"></div>
             <div class="col-md-4">
-                <button mat-button-raised [mat-dialog-close]="newtask" class="bg-primary text-white py-2 px-4"
+                <button type="submit" [mat-dialog-close]="newtask" class="bg-primary text-white py-2 px-4"
                     [disabled]="newtaskform.form.invalid">Create
                 </button>
             </div>

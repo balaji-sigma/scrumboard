@@ -1,0 +1,88 @@
+<div class="container bg-white">
+    <form #moveform="ngForm" (ngSubmit)="onformsubmit()" novalidate>
+        <div class="row bg-primary text-white">
+            <div class="col-md-12">
+                Move Task Column
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 form-group">
+
+                <label>Task No</label>
+                <input class="w-100 border" type="number" name="title" #tname="ngModel" [(ngModel)]="movetask.taskid"
+                    cdkFocusInitial required [class.border-danger]="tname.invalid && tname.touched">
+
+            </div>
+
+        </div>
+
+
+        <div class="row mb-3 border border-secondary">
+            <label class="w-100">Moved By</label>
+            <div class="col-md-3 form-check">
+                <input class="form-check-input" #asgn="ngModel" [(ngModel)]="movetask.movby" type="radio"
+                    name="assignee" id="assignee1" value='4' required>
+                <label class="form-check-label" for="assignee1">
+                    Rittika
+                </label>
+            </div>
+            <div class="col-md-3 form-check">
+                <input class="form-check-input" #asgn="ngModel" [(ngModel)]="movetask.movby" type="radio"
+                    name="assignee" id="assignee2" value='5' required>
+                <label class="form-check-label" for="assignee2">
+                    Urmila
+                </label>
+            </div>
+        </div>
+
+        <div class="row mb-3 border border-secondary">
+            <label class="w-100">From Backlog Column to </label>
+
+            <div class="col-md-4 form-check">
+                <input class="form-check-input" [(ngModel)]="movetask.dstid" type="radio" name="coloumn" id="coloumn2"
+                    value=2 #taskcol="ngModel" required>
+                <label class="form-check-label" for="coloumn2">
+                    Ready
+                </label>
+            </div>
+            <div class="col-md-4 form-check">
+                <input class="form-check-input" [(ngModel)]="movetask.dstid" type="radio" name="coloumn" id="coloumn3"
+                    value=3 #taskcol="ngModel" required>
+                <label class="form-check-label" for="coloumn3">
+                    Work In Progress
+                </label>
+            </div>
+            <div class="col-md-4 form-check">
+                <input class="form-check-input" [(ngModel)]="movetask.dstid" type="radio" name="coloumn" id="coloumn4"
+                    value=4 #taskcol="ngModel" required>
+                <label class="form-check-label" for="coloumn4">
+                    Done
+                </label>
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-md-4">
+                <mat-form-field>
+                    <input name="mdate" required matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker1"
+                        placeholder="Move date" (dateChange)="addEvent('move', $event)" #tmdate="ngModel" ngModel>
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                </mat-form-field>
+            </div>
+
+
+        </div>
+
+        <div class="row form-group">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <button type="submit" [mat-dialog-close]="movetask" class="bg-primary text-white py-2 px-4"
+                    [disabled]="moveform.form.invalid">Create
+                </button>
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+    </form>
+</div>

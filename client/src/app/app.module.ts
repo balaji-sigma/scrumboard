@@ -25,6 +25,10 @@ import { DaistandmeetdialogComponent } from './daistandmeetdialog/daistandmeetdi
 import { TasksComponent } from './tasks/tasks.component';
 import { TaskNewComponent } from './task-new/task-new.component';
 import { KnewtaskService } from './knewtask.service';
+import { MovetaskComponent } from './movetask/movetask.component';
+import { MovetaskserService } from './movetaskser.service';
+import { AddfileComponent } from './addfile/addfile.component';
+import { AddcommentComponent } from './addcomment/addcomment.component';
 
 
 @NgModule({
@@ -36,7 +40,10 @@ import { KnewtaskService } from './knewtask.service';
     MeetingsComponent,
     DaistandmeetdialogComponent,
     TasksComponent,
-    TaskNewComponent
+    TaskNewComponent,
+    MovetaskComponent,
+    AddfileComponent,
+    AddcommentComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +61,8 @@ import { KnewtaskService } from './knewtask.service';
     DashblService,
     DashmsService,
     MeetingsService,
-    KnewtaskService
+    KnewtaskService,
+    MovetaskserService
   ],
   bootstrap: [AppComponent]
 })

@@ -7,6 +7,9 @@ import { MeetingsComponent } from './meetings/meetings.component';
 import { DaistandmeetdialogComponent } from './daistandmeetdialog/daistandmeetdialog.component'
 import { TasksComponent } from './tasks/tasks.component';
 import { TaskNewComponent } from './task-new/task-new.component';
+import { MovetaskComponent } from './movetask/movetask.component';
+import { AddfileComponent } from './addfile/addfile.component';
+import { AddcommentComponent } from './addcomment/addcomment.component';
 
 
 const routes: Routes = [
@@ -34,7 +37,7 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  entryComponents: [DaistandmeetdialogComponent, TaskNewComponent],
+  entryComponents: [DaistandmeetdialogComponent, TaskNewComponent, MovetaskComponent, AddcommentComponent],
 })
 export class AppRoutingModule { }
 
@@ -44,5 +47,8 @@ export const RoutingComponents = [
   DashboardComponent,
   MeetingsComponent,
   DaistandmeetdialogComponent,
-  TasksComponent
+  TasksComponent,
+  MovetaskComponent,
+  AddfileComponent,
+  AddcommentComponent
 ];

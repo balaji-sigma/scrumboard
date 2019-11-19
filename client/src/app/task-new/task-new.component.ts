@@ -3,6 +3,7 @@ import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { KnewtaskService } from '../knewtask.service';
 
+
 export interface NewTask {
   title: string;
   desc?: string;
@@ -48,11 +49,12 @@ export class TaskNewComponent implements OnInit {
   }
 
   onformsubmit() {
+    console.log('insub');
     this.ktser.ontasksubmit(this.newtask).subscribe(
       data => console.log('success', data),
       error => console.log('oops', error)
     );
-    console.log('insub');
+    console.log('insub1');
   }
 
 
