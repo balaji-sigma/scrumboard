@@ -1,0 +1,43 @@
+<div class="container-fluid bg-secondary shadow border border-primary">
+    <div class="row bg-primary text-white h4">
+        <div class="col-md-12 box shadow colstyle py-2">Projects</div>
+    </div>
+    <mat-accordion class="shadow bg-secondary">
+        <mat-expansion-panel [expanded]="i === 0" *ngFor="let project of projects; let i = index"
+            class="shadow py-1 border border-secondary">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{project.title}}
+                </mat-panel-title>
+                <mat-panel-description>
+                    Owner : {{getowner(project.owner_id)}}
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <div class="container">
+                <div class="row my-2">
+                    <div class="col-md-2">{{project.id}}</div>
+                    <div class="col-md-3">{{epochtocdate(project.created_date)}}</div>
+                    <div class="col-md-3">{{epochtocdate(project.start_date)}}</div>
+                    <div class="col-md-3">{{epochtocdate(project.end_date)}}</div>
+                </div>
+                <div class="row my-4">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-3">Status : <span class="adot bg-success"></span> Active</div>
+                    <div class="col-md-6">Members
+                        <span title="Pradeep" class="dot" style="background-color:darkorchid">P</span>
+                        <span title="Poonam" class="dot" style="background-color:darkblue">P</span>
+                        <span title="Rittika" class="dot" style="background-color:darkred">R</span>
+                        <span title="Urmila" class="dot" style="background-color:darkorange">U</span>
+                    </div>
+                </div>
+                <div class="row my-2 mx-2">Description
+                    <div class="col-md-12 my-4">{{project.description}}</div>
+
+                </div>
+            </div>
+
+        </mat-expansion-panel>
+    </mat-accordion>
+
+</div>

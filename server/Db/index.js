@@ -9,4 +9,8 @@ var pool = mysql.createPool({
     port: 3306,
     database: 'kanboard'
 });
+
+
+
+
 module.exports = pool;

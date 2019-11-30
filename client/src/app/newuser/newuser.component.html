@@ -1,0 +1,79 @@
+<div class="container bg-white">
+    <form #newuserform="ngForm" (ngSubmit)="onformsubmit()" novalidate>
+        <div class="row bg-primary text-white">
+            <div class="col-md-12 py-2">
+                Add New User
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <label>First Name {{newuser.first_name}}</label>
+                <input class="w-100 border" type="text" name="firstname" #fname="ngModel"
+                    [(ngModel)]="newuser.first_name" cdkFocusInitial required
+                    [class.border-danger]="fname?.invalid && fname?.touched">
+            </div>
+            <div class="col-md-6 form-group">
+                <label>Last Name</label>
+                <input class="w-100 border" type="text" name="lastname" #lname="ngModel" [(ngModel)]="newuser.last_name"
+                    required [class.border-danger]="lname.invalid && lname.touched">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <label>User Name</label>
+                <input class="w-100 border" type="text" name="username" #uname="ngModel" [(ngModel)]="newuser.username"
+                    required [class.border-danger]="uname.invalid && uname.touched">
+            </div>
+            <div class="col-md-6 form-group">
+                <label>Password</label>
+                <input class="w-100 border" type="password" name="password" #passwd="ngModel"
+                    [(ngModel)]="newuser.password" required [class.border-danger]="passwd.invalid && passwd.touched">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 form-group">
+                <label>Email</label>
+                <input class="w-100 border" type="text" name="emailid" #email="ngModel" [(ngModel)]="newuser.email"
+                    required [class.border-danger]="email.invalid && email.touched">
+            </div>
+        </div>
+        <div class="row mb-3 border border-secondary px-2">
+            <label class="w-100">User Role</label>
+            <div class="col-md-4 form-check">
+                <input class="form-check-input" [(ngModel)]="newuser.role" type="radio" name="coloumn" id="coloumn1"
+                    value=1 #admin="ngModel" required>
+                <label class="form-check-label" for="coloumn1">
+                    Admin
+                </label>
+            </div>
+            <div class="col-md-4 form-check">
+                <input class="form-check-input" [(ngModel)]="newuser.role" type="radio" name="coloumn" id="coloumn2"
+                    value=2 #projman="ngModel" required>
+                <label class="form-check-label" for="coloumn2">
+                    Project Manager
+                </label>
+            </div>
+            <div class="col-md-4 form-check">
+                <input class="form-check-input" [(ngModel)]="newuser.role" type="radio" name="coloumn" id="coloumn3"
+                    value=3 #projmem="ngModel" required>
+                <label class="form-check-label" for="coloumn3">
+                    Project Member
+                </label>
+            </div>
+
+        </div>
+
+        <div class="row form-group">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <button type="submit" class="bg-primary text-white py-2 px-4" [disabled]="newuserform.form.invalid">ADD
+                    User
+                </button>
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+    </form>
+</div>

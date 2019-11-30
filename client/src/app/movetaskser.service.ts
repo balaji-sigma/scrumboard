@@ -11,7 +11,7 @@ export class MovetaskserService {
 
   constructor(public _http: HttpClient) { }
 
-  public _url = 'http://test.sigmasolutions.co.in/server/newtask1';
+  public _url = 'http://test.sigmasolutions.co.in/server/movetask';
 
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {

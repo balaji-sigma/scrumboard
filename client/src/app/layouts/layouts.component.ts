@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EmploginService } from '../emplogin.service';
-import { Globals } from '../../assets/data/globals'
+import { Globals as global } from '../../assets/data/globals'
 
 
 @Component({
@@ -17,14 +17,18 @@ export class LayoutsComponent implements OnInit {
   public menu = [];
 
   public authmenu: boolean;
+  public appuserinfo;
+  public appuser;
 
   apanel: boolean = false;
 
-  constructor(private _sidemenuservice: EmploginService, public global: Globals) { }
+  constructor(private _sidemenuservice: EmploginService) { }
 
   ngOnInit() {
+    this.appuser = JSON.parse(localStorage.getItem(this.appuserinfo));
+    console.log(this.appuser.appuserrole);
     this._sidemenuservice.getsidemenu().subscribe(data => this.menu = data);
-    if (this.global.role == 1 || this.global.role == 2) this.authmenu = true;
+    if (this.appuser.appuserrole == 1 || this.appuser.appuserrole == 2) this.authmenu = true;
     else this.authmenu = false;
   }
 

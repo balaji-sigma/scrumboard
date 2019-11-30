@@ -15,5 +15,7 @@ const port = 3000;
 
 
 app.use('/server', require('./Routes/basic'));
+app.use('/scrum', require('./Routes/scrum'));
+app.use('/board', require('./Routes/board'));
 
 app.listen(port, () => console.log(`Server running on port ${port}`));

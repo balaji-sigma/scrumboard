@@ -10,6 +10,11 @@ import { TaskNewComponent } from './task-new/task-new.component';
 import { MovetaskComponent } from './movetask/movetask.component';
 import { AddfileComponent } from './addfile/addfile.component';
 import { AddcommentComponent } from './addcomment/addcomment.component';
+import { NewprojectComponent } from './newproject/newproject.component';
+import { NewuserComponent } from './newuser/newuser.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { DiasprintplanComponent } from './diasprintplan/diasprintplan.component';
+import { DiasprintretroComponent } from './diasprintretro/diasprintretro.component';
 
 
 const routes: Routes = [
@@ -26,6 +31,18 @@ const routes: Routes = [
         component: DashboardComponent
       },
       {
+        path: 'projects',
+        component: ProjectsComponent
+      },
+      {
+        path: 'addproject',
+        component: NewprojectComponent
+      },
+      {
+        path: 'adduser',
+        component: NewuserComponent
+      },
+      {
         path: 'tasks',
         component: TasksComponent
       }
@@ -35,9 +52,16 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload' })],
   exports: [RouterModule],
-  entryComponents: [DaistandmeetdialogComponent, TaskNewComponent, MovetaskComponent, AddcommentComponent],
+  entryComponents: [
+    DaistandmeetdialogComponent,
+    TaskNewComponent,
+    MovetaskComponent,
+    AddcommentComponent,
+    DiasprintplanComponent,
+    DiasprintretroComponent
+  ],
 })
 export class AppRoutingModule { }
 
@@ -50,5 +74,10 @@ export const RoutingComponents = [
   TasksComponent,
   MovetaskComponent,
   AddfileComponent,
-  AddcommentComponent
+  AddcommentComponent,
+  NewprojectComponent,
+  NewuserComponent,
+  ProjectsComponent,
+  DiasprintplanComponent,
+  DiasprintretroComponent
 ];

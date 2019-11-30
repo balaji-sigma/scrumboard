@@ -1,1 +1,69 @@
-<p>addcomment works!</p>
+<div class="container bg-white">
+    <form #addcommform="ngForm" (ngSubmit)="onformsubmit()" novalidate>
+        <div class="row bg-primary">
+            <div class="col-md-12">
+                Add Comment
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 form-group">
+
+                <label>Task No</label>
+                <input class="w-100 border" type="number" name="taskid" #tname="ngModel" [(ngModel)]="newcomment.taskid"
+                    cdkFocusInitial required [class.border-danger]="tname.invalid && tname.touched">
+
+            </div>
+
+        </div>
+        <div class="row mb-3 border border-secondary">
+            <label class="w-100">Comment By</label>
+            <div class="col-md-3 form-check">
+                <input class="form-check-input" #asgn="ngModel" [(ngModel)]="newcomment.user" type="radio" name="user"
+                    id="assignee1" value='4' required>
+                <label class="form-check-label" for="assignee1">
+                    Rittika
+                </label>
+            </div>
+            <div class="col-md-3 form-check">
+                <input class="form-check-input" #asgn="ngModel" [(ngModel)]="newcomment.user" type="radio" name="user"
+                    id="assignee2" value='5' required>
+                <label class="form-check-label" for="assignee2">
+                    Urmila
+                </label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 form-group">
+                <label>Description</label>
+                <textarea class="w-100" type="text" name="comment" #tdesc="ngModel" [(ngModel)]="newcomment.comment"
+                    required [class.border-danger]="tdesc.invalid && tdesc.touched">
+                            </textarea>
+            </div>
+
+        </div>
+        <div class="row form-group">
+            <div class="col-md-4">
+                <mat-form-field>
+                    <input name="commdate" required matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker1"
+                        placeholder="Move date" (dateChange)="addEvent('addc', $event)" #tmdate="ngModel" ngModel>
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                </mat-form-field>
+            </div>
+
+
+        </div>
+
+        <div class="row form-group">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <button type="submit" [mat-dialog-close]="newcomment" class="bg-primary text-white py-2 px-4"
+                    [disabled]="moveform.form.invalid">Add Comment
+                </button>
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+    </form>
+</div>

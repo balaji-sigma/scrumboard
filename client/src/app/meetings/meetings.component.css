@@ -1,4 +1,15 @@
 .colstyle {
     padding: 10px;
     font-family: open-sans;
+    text-align: center;
+}
+
+.dot {
+  height: 35px;
+  width: 35px;
+  color:white;  
+  border-radius: 50%;
+  display: inline-block;
+  text-align:center;
+  padding: 7px;
 }

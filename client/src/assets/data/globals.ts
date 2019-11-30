@@ -4,10 +4,10 @@ import { Injectable } from '@angular/core';
 export class Globals {
 
 
-    public id: number;
-    public name: string;
-    public role: number;
-    public email: string;
-    public login: boolean;
+    public static id: number;
+    public static username: string;
+    public static role: number;
+    public static email: string;
+    public static login: boolean;
 
 }

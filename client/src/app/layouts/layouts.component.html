@@ -18,7 +18,7 @@
                                     <mat-icon matListIcon>{{link.iconName}}</mat-icon>{{ link.displayName }}
                                 </mat-expansion-panel-header>
                                 <a class="text-white bg-dark" mat-list-item *ngFor=" let child of link.children"
-                                    [routerLink]="[child.route, {id: link.children.length}]">
+                                    [routerLink]="[child.route]">
                                     <mat-icon matListIcon>{{child.iconName}}</mat-icon>{{ child.displayName }}
                                 </a>
                             </mat-expansion-panel>

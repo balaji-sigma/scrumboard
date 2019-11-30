@@ -7,11 +7,11 @@
                     <mat-icon>account_circle</mat-icon>
                     <span>Daily Standup</span>
                 </button>
-                <button mat-menu-item>
+                <button mat-menu-item (click)="sprintplanmeet()">
                     <mat-icon>settings_applications</mat-icon>
                     <span>Sprint Planning</span>
                 </button>
-                <button mat-menu-item (click)="navigateMenu('logout')">
+                <button mat-menu-item (click)="sprintretromeet()">
                     <mat-icon>power_settings_new</mat-icon>
                     <span> Sprint Retrospective</span>
                 </button>
@@ -21,7 +21,7 @@
         <button mat-button-raised class="text-white text-dark shadow " style="background-color: #3E4551 "
             [matMenuTriggerFor]="schmeet">
 
-            <span class="text-white">Add Meeting{{newstmeet | json}}</span>
+            <span class="text-white">Add Meeting</span>
         </button>
     </div>
 
@@ -43,23 +43,54 @@
     <div class="row bg-secondary">
         <div class="col-md-12 colstyle font-weight-bold">
             <mat-accordion>
-                <mat-expansion-panel *ngFor="let meeting of meetings" class="shadow bg-white">
+                <mat-expansion-panel *ngFor="let meeting of meetings; let i = index" class="shadow bg-white">
                     <mat-expansion-panel-header class="text-dark bg-white shadow border border-secondary"
                         style="border-radius: 0px">
 
 
                         <div class="col-md-3 colstyle font-weight-bold">{{ meeting.title }}</div>
-                        <div class="col-md-1 colstyle font-weight-bold">By</div>
-                        <div class="col-md-3 colstyle font-weight-bold">To</div>
-                        <div class="col-md-2 colstyle font-weight-bold">Status</div>
-                        <div class="col-md-3 colstyle font-weight-bold">Date</div>
+                        <div class="col-md-1 colstyle font-weight-bold">
+                            <span title="Pradeep" class="dot" style="background-color:darkorchid">P</span></div>
+                        <div class="col-md-3 colstyle font-weight-bold">
+                            <span *ngIf="meeting.in4 == 1" title="Pradeep" class="dot"
+                                style="background-color:darkorchid">P</span>
+                            <span *ngIf="meeting.in3 == 1" title="Poonam" class="dot"
+                                style="background-color:darkblue">P</span>
+                            <span *ngIf="meeting.in1 == 1" title="Rittika" class="dot"
+                                style="background-color:darkred">R</span>
+                            <span *ngIf="meeting.in2 == 1" title="Urmila" class="dot"
+                                style="background-color:darkorange">U</span>
+                        </div>
+                        <div class="col-md-2 colstyle font-weight-bold">{{checkstatus(meeting.status)}}</div>
+                        <div class="col-md-3 colstyle font-weight-bold">{{epochtocdate(meeting.meetdate)}}</div>
 
                     </mat-expansion-panel-header>
 
-                    <a class="text-dark" mat-list-item>
 
-                        {{ meeting.title }}
-                    </a>
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <label>Description</label>
+                            <textarea class="w-100" [id]="meeting.id" type="text" name="comment" #tdesc="ngModel"
+                                [(ngModel)]="meetings[i].desc" required [disabled]="!meetstatus"
+                                [class.border-danger]="tdesc.invalid && tdesc.touched">{{tdesc.id}}
+                            </textarea>
+                        </div>
+
+                    </div>
+
+                    <mat-action-row style="justify-content: space-around">
+                        <mat-slide-toggle class="example-margin" [checked]="meetings[i].status"
+                            (click)="changestatus($event)" [name]="meeting.id" [disabled]="!meetstatus">
+
+                            <span *ngIf="!meetstatus" [innerHtml]="checkstatus(meeting.status)"></span>
+                            <span *ngIf="meetstatus" [innerHtml]="checkstatus(meeting.status)"></span>
+
+                        </mat-slide-toggle>
+                        <button class="bg-primary text-white" *ngIf="!meetstatus" mat-button [id]="meeting.id"
+                            (click)="editdsmeet($event)">Edit</button>
+                        <button class="bg-warning text-white" *ngIf="meetstatus" mat-button [id]="meeting.id"
+                            (click)="savedsmeet($event)">Save</button>
+                    </mat-action-row>
                 </mat-expansion-panel>
             </mat-accordion>
         </div>

@@ -29,6 +29,18 @@ import { MovetaskComponent } from './movetask/movetask.component';
 import { MovetaskserService } from './movetaskser.service';
 import { AddfileComponent } from './addfile/addfile.component';
 import { AddcommentComponent } from './addcomment/addcomment.component';
+import { NewprojectComponent } from './newproject/newproject.component';
+import { NewuserComponent } from './newuser/newuser.component';
+import { NewprojserviceService } from './newprojservice.service';
+import { NewuserserviceService } from './newuserservice.service';
+import { ProjectsComponent } from './projects/projects.component';
+import { ProjserviceService } from './projservice.service';
+import { DiasprintplanComponent } from './diasprintplan/diasprintplan.component';
+import { DiasprintretroComponent } from './diasprintretro/diasprintretro.component';
+import { SprintplanserviceService } from './sprintplanservice.service';
+import { SprintretroserviceService } from './sprintretroservice.service';
+import { DailstanmeetserviceService } from './dailstanmeetservice.service';
+import { MeetingmainComponent } from './meetingmain/meetingmain.component';
 
 
 @NgModule({
@@ -43,7 +55,13 @@ import { AddcommentComponent } from './addcomment/addcomment.component';
     TaskNewComponent,
     MovetaskComponent,
     AddfileComponent,
-    AddcommentComponent
+    AddcommentComponent,
+    NewprojectComponent,
+    NewuserComponent,
+    ProjectsComponent,
+    DiasprintplanComponent,
+    DiasprintretroComponent,
+    MeetingmainComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +80,13 @@ import { AddcommentComponent } from './addcomment/addcomment.component';
     DashmsService,
     MeetingsService,
     KnewtaskService,
-    MovetaskserService
+    MovetaskserService,
+    NewprojserviceService,
+    NewuserserviceService,
+    ProjserviceService,
+    SprintplanserviceService,
+    SprintretroserviceService,
+    DailstanmeetserviceService
   ],
   bootstrap: [AppComponent]
 })

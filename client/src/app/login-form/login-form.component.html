@@ -9,8 +9,9 @@
             <form class="text-center border border-dark p-5" #loginform="ngForm" novalidate (ngSubmit)="onSubmit()">
                 <p class="h4 mb-4">Sign in</p>
                 <mat-form-field class="w-100 text-white">
-                    <input pattern="(rittika)|(urmila)|(pradeep)|(admin)" matInput type="text" required #name="ngModel"
-                        [(ngModel)]="username" id="username" name="username" class="form-control text-white">
+                    <input pattern="(rittika)|(urmila)|(pradeep)|(admin)|(poonam)" matInput type="text" required
+                        #name="ngModel" [(ngModel)]="username" id="username" name="username"
+                        class="form-control text-white">
                     <mat-placeholder class="placeholder text-white">Username</mat-placeholder>
                     <mat-error *ngIf="name.invalid">
                         Please enter a valid User Name

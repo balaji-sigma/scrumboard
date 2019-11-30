@@ -12,26 +12,26 @@
         "check": false
     },
     {
-        "displayName": "Cards Wall",
-        "iconName": "ballot",
-        "route": "scrumboard",
-        "check": false
-    },
-    {
-        "displayName": "Scrum",
+        "displayName": "Meetings",
         "iconName": "description",
         "check": false,
         "children": [
             {
-                "displayName": "Meetings",
+                "displayName": "Daily Standup",
                 "iconName": "how_to_reg",
                 "route": "meetings",
                 "check": false
             },
             {
-                "displayName": "User Stories",
+                "displayName": "Sprint Planning",
                 "iconName": "how_to_reg",
                 "route": "userstories",
+                "check": false
+            },
+            {
+                "displayName": "Sprint Retrospective",
+                "iconName": "waves",
+                "route": "tasks",
                 "check": false
             },
             {
@@ -39,9 +39,28 @@
                 "iconName": "waves",
                 "route": "tasks",
                 "check": false
+            }
+        ]
+    },
+    {
+        "displayName": "User Cards",
+        "iconName": "description",
+        "check": false,
+        "children": [
+            {
+                "displayName": "User Stories",
+                "iconName": "how_to_reg",
+                "route": "meetings",
+                "check": false
             },
             {
-                "displayName": "Activity Stream",
+                "displayName": "Backlogs",
+                "iconName": "how_to_reg",
+                "route": "userstories",
+                "check": false
+            },
+            {
+                "displayName": "Milestones",
                 "iconName": "how_to_reg",
                 "route": "actstream",
                 "check": false

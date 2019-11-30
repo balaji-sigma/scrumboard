@@ -36,26 +36,64 @@
         </div>
 
         <div class="row mb-3 border border-secondary">
-            <label class="w-100">From Backlog Column to </label>
-
-            <div class="col-md-4 form-check">
-                <input class="form-check-input" [(ngModel)]="movetask.dstid" type="radio" name="coloumn" id="coloumn2"
-                    value=2 #taskcol="ngModel" required>
+            <label class="w-100">Source Column </label>
+            <div class="col-md-3 form-check">
+                <input class="form-check-input" [(ngModel)]="movetask.srcid" type="radio" name="coloumn" id="coloumn1"
+                    value=1 #taskcol5="ngModel" required>
+                <label class="form-check-label" for="coloumn2">
+                    Backlog
+                </label>
+            </div>
+            <div class="col-md-3 form-check">
+                <input class="form-check-input" [(ngModel)]="movetask.srcid" type="radio" name="coloumn" id="coloumn2"
+                    value=2 #taskcol6="ngModel" required>
                 <label class="form-check-label" for="coloumn2">
                     Ready
                 </label>
             </div>
-            <div class="col-md-4 form-check">
-                <input class="form-check-input" [(ngModel)]="movetask.dstid" type="radio" name="coloumn" id="coloumn3"
-                    value=3 #taskcol="ngModel" required>
+            <div class="col-md-3 form-check">
+                <input class="form-check-input" [(ngModel)]="movetask.srcid" type="radio" name="coloumn" id="coloumn3"
+                    value=3 #taskcol7="ngModel" required>
                 <label class="form-check-label" for="coloumn3">
                     Work In Progress
                 </label>
             </div>
-            <div class="col-md-4 form-check">
-                <input class="form-check-input" [(ngModel)]="movetask.dstid" type="radio" name="coloumn" id="coloumn4"
-                    value=4 #taskcol="ngModel" required>
+            <div class="col-md-3 form-check">
+                <input class="form-check-input" [(ngModel)]="movetask.srcid" type="radio" name="coloumn" id="coloumn4"
+                    value=4 #taskcol8="ngModel" required>
                 <label class="form-check-label" for="coloumn4">
+                    Done
+                </label>
+            </div>
+        </div>
+
+        <div class="row mb-3 border border-secondary">
+            <label class="w-100">Desitination Column </label>
+            <div class="col-md-3 form-check">
+                <input class="form-check-input" [(ngModel)]="movetask.dstid" type="radio" name="coloumn1" id="coloumn11"
+                    value=1 #taskcol1="ngModel" required>
+                <label class="form-check-label" for="coloumn11">
+                    Backlog
+                </label>
+            </div>
+            <div class="col-md-3 form-check">
+                <input class="form-check-input" [(ngModel)]="movetask.dstid" type="radio" name="coloumn1" id="coloumn12"
+                    value=2 #taskcol2="ngModel" required>
+                <label class="form-check-label" for="coloumn12">
+                    Ready
+                </label>
+            </div>
+            <div class="col-md-3 form-check">
+                <input class="form-check-input" [(ngModel)]="movetask.dstid" type="radio" name="coloumn1" id="coloumn13"
+                    value=3 #taskcol3="ngModel" required>
+                <label class="form-check-label" for="coloumn13">
+                    Work In Progress
+                </label>
+            </div>
+            <div class="col-md-3 form-check">
+                <input class="form-check-input" [(ngModel)]="movetask.dstid" type="radio" name="coloumn1" id="coloumn14"
+                    value=4 #taskcol4="ngModel" required>
+                <label class="form-check-label" for="coloumn14">
                     Done
                 </label>
             </div>

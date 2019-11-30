@@ -1,7 +1,7 @@
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { DashnotiService } from '../dashnoti.service';
-import { Globals } from '../../assets/data/globals'
+import { Globals as global } from '../../assets/data/globals'
 
 @Component({
   selector: 'app-nav-bar-dash',
@@ -12,12 +12,18 @@ export class NavBarDashComponent implements OnInit {
 
   constructor(private router: Router,
     private _dashnotiService: DashnotiService,
-    public global: Globals) { }
+  ) { }
 
   public notifications = [];
   public count: number = 0;
+  public appuserinfo;
+  public appuser;
+
+  //public username = localStorage.getItem(AppUserName);
 
   ngOnInit() {
+    this.appuser = JSON.parse(localStorage.getItem(this.appuserinfo));
+    //console.log(this.appuser.appuserid);
     this._dashnotiService.getNotification().subscribe(data => {
       this.notifications = data
       this.notifications.forEach((notify) => {
@@ -41,6 +47,7 @@ export class NavBarDashComponent implements OnInit {
   navigateMenu(tag) {
     if (tag === 'logout') {
       try {
+        localStorage.clear();
         this.router.navigate(['']);
       }
       catch (e) {

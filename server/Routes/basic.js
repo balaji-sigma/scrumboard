@@ -14,9 +14,9 @@ router.post('/movetask', (req, res) => {
 
     res.status(200).send({ "msg": "move task success" });
     console.log(req.body);
-    //updateprojact(req.body.mdate);
-    //updatemovtask(req.body);
-    // insmovprojact(req.body);
+    updateprojact(req.body.mdate);
+    updatemovtask(req.body);
+    insmovprojact(req.body);
     updatetrans(req.body);
 
     setTimeout(instranstion, 8000, req.body);
@@ -93,7 +93,6 @@ function instranstion(data) {
                         console.log(trsql4.sql);
                         throw err;
                     }
-
                 })
             })
         });
@@ -246,9 +245,9 @@ function updatemovtask(data) {
 router.post('/newcomment', (req, res) => {
     res.status(200).send({ "msg": "success" });
     console.log(req.body);
-    //updatecommtbl(req.body);
-    //insnewcommtbl(req.body);
-    //updateprojact(req.body.comdate);
+    updatecommtbl(req.body);
+    insnewcommtbl(req.body);
+    updateprojact(req.body.comdate);
 
 });
 
@@ -693,11 +692,12 @@ function insnewtask(data) {
         if (newcol == 3) colname = "Work In Progress";
         if (newcol == 4) colname = "Done";
 
-        db.query('SELECT id FROM tasks WHERE date_creation > ?', [data.cdate], function (err, res, fds) {
+        var nsql = db.query('SELECT id FROM tasks WHERE date_creation > ? LIMIT 1', [data.cdate], function (err, res, fds) {
             if (err) {
                 console.log('in 6....');
                 throw err;
             }
+            console.log(nsql.sql);
             priid = res[0].id - 1;
             var insval = {
                 id: priid,
@@ -727,7 +727,10 @@ function insnewtask(data) {
                     updateqerr(sql3.sql);
                     throw err;
                 }
+
                 lasttask = results.insertId;
+                console.log(lasttask);
+                console.log(sql3.sql);
 
                 var sql1 = "SELECT * from tasks WHERE id=?";
                 db.query(sql1, priid, function (err, res, fds) {
@@ -748,7 +751,8 @@ function insnewtask(data) {
                         category_description: null,
                         column_position: newcol
                     };
-
+                    console.log(res[0]);
+                    console.log(sql3.sql);
                     Object.keys(res[0]).forEach(function (key) {
                         if (res[0][key] != null && !isNaN(res[0][key])) res[0][key] = res[0][key].toString();
 
